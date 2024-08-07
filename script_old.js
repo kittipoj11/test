@@ -1,4 +1,4 @@
-let myname = "Nathapat Soontornpurmsap.";
+let myname = "Nathapat Soontornpurmsap(POJ)";
 console.log(`Hello ${myname}`);
 console.log(`Hello ${myname}`);
 myname = "123";
