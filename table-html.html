@@ -11,43 +11,56 @@
     />
     <link rel="stylesheet" href="./css_final.css" />
     <title>Fixed table</title>
+    <style>
+      .contentx::before{
+        content: "\1F3E1";
+        font-size: 2.5em;
+        margin-right: 10px;
+        
+      }
+    </style>
+    <script src="https://kit.fontawesome.com/d105db7edb.js" crossorigin="anonymous"></script>
   </head>
 
-  <body class="vh-100">
+  <body>
     <!-- <div class="vhx-100"> -->
-      <div class="p-3 mh-100" style="display: grid;grid-template-rows: 10% 80%;grid-template-columns: 100%;">
-        <div class="border border-1 overflow-auto" style="text-decoration-line:underline;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minima officiis culpa cum eum accusantium suscipit vitae! Illum fugit non, asperiores error culpa beatae neque iusto consequuntur, nihil nam laborum sit, quam odit? Nemo repellendus mollitia sapiente eveniet voluptatum quam minus eius neque enim, voluptate consequatur soluta provident, minima, beatae illo. Tempore aperiam rem atque. Cupiditate, at consectetur! Tenetur beatae voluptate, veniam a provident assumenda eum fugit rerum mollitia quam, quidem sed in perferendis ratione! Explicabo neque excepturi praesentium exercitationem dignissimos harum quis qui ratione. Optio earum quidem sint recusandae dicta modi ducimus hic, dolorem fuga voluptatem, iste nam sed.
+      <div class="p-3 mh-100" style="display: grid;grid-template-rows: 20% 80%;grid-template-columns: 100%;">
+        <div class="border border-1 overflow-auto mb-1 text-white bg-black contentx" style="text-shadow:0 0 5px white,0 0 10px white,0 0 20px white;">
+          <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube fa-bounce" style="color: #ff0000;"></i></a>
+          <a href="index.html"  target="_blank"><i class="fa-solid fa-gear fa-spin" style="color: #ff0;"></i></a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium minima officiis culpa cum eum accusantium suscipit vitae! Illum fugit non, asperiores error culpa beatae neque iusto consequuntur, nihil nam laborum sit, quam odit? Nemo repellendus mollitia sapiente eveniet voluptatum quam minus eius neque enim, voluptate consequatur soluta provident, minima, beatae illo. Tempore aperiam rem atque. Cupiditate, at consectetur! Tenetur beatae voluptate, veniam a provident assumenda eum fugit rerum mollitia quam, quidem sed in perferendis ratione! Explicabo neque excepturi praesentium exercitationem dignissimos harum quis qui ratione. Optio earum quidem sint recusandae dicta modi ducimus hic, dolorem fuga voluptatem, iste nam sed.
+          
         </div>
 
         <!-- <div class="mw-100 mh-100"> -->
-          <div class="overflow-scroll mh-100">
-            <table class="table table-bordered table-striped" style="min-width: max-content;">
+          <div class="table-container">
+            <table class="table-striped table-fixed-header">
               <thead>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col1 Col1 </th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col2 Col2 Col2 </th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col3 Col3 Col3 Col3 Col3</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col4 Col4 Col4</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col5</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col6</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col7</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col8</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col9</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col10</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col11</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col12</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col13</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col14</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col15</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col16</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col17</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col18</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col19</th>
-                <th class="sticky-top bg-secondary text-black text-center fs-6 fw-bold">Col20</th>
+                <tr>
+                  <th>Col1 Col1 </th>
+                  <th>Col2 Col2 Col2 </th>
+                  <th>Col3 Col3 Col3 Col3</th>
+                  <th>Col4 Col4 Col4</th>
+                  <th>Col5</th>
+                  <th>Col6</th>
+                  <th>Col7</th>
+                  <th>Col8</th>
+                  <th>Col9</th>
+                  <th>Col10</th>
+                  <th>Col11</th>
+                  <th>Col12</th>
+                  <th>Col13</th>
+                  <th>Col14</th>
+                  <th>Col15</th>
+                  <th>Col16</th>
+                  <th>Col17</th>
+                  <th>Col18</th>
+                  <th>Col19</th>
+                  <th>Col20</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="">Value 1 Lorem ipsum dolor.</td>
+                  <td>Value 1 Lorem ipsum dolor.</td>
                   <td>Value 2 Lorem ipsum dolor.</td>
                   <td>Value 3 Lorem ipsum dolor.</td>
                   <td>Value 4</td>
