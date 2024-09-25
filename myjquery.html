@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
         <style>
         div {
@@ -33,24 +32,5 @@
     <script src="jquery/jquery.min.js"></script>
     <script src="myjquery.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("div").hover(function () {
-                $(this).css({'background-color': 'yellow', 'font-weight': 'bolder'});
-            }, function () {
-                var cssObj = {
-                    'background-color': '#ddd',
-                    'font-weight': '',
-                    'color': 'rgb(0,40,244)',
-                    'border':'1px solid red',
-                    'border-radius':'50%',
-                    'text-align': 'center',
-                    'justify-content': 'center',
-                }
-                <!-- $(this).text(''); -->
-                $(this).css(cssObj);
-            });
-        });
-    </script>
 </body>
 </html>
