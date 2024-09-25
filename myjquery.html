@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        div {
+            display:inline-block;
+            width:100px;
+            height:100px;
+            color: green;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="hello">Hello World</h3>
+    <h3 class="hello">Hello World</h3>
+    <h4 class="hello" id="hello">Hello World</h4>
+    <h4 class="hello">Hello World</h4>
+    <h5 class="hello">Hello World</h5>
+    <h5 class="hello">Hello World</h5>
+    <h5 class="hello">Hello World</h5>
+    <a href="https://www.google.com" target="_blank" class="hello">google</a>
+    <button class="hello" id="btnHi">Click</button>
+    <button class="hello" id="btnReload">Refresh</button>
+    <br>
+    <div>Move the mouse over a paragraph.</div>
+    <div>Like this one or the one above.</div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script src="myjquery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("div").hover(function () {
+                $(this).css({'background-color': 'yellow', 'font-weight': 'bolder'});
+            }, function () {
+                var cssObj = {
+                    'background-color': '#ddd',
+                    'font-weight': '',
+                    'color': 'rgb(0,40,244)',
+                    'border':'1px solid red',
+                    'border-radius':'50%',
+                    'text-align': 'center',
+                    'justify-content': 'center',
+                }
+                <!-- $(this).text(''); -->
+                $(this).css(cssObj);
+            });
+        });
+    </script>
+</body>
+</html>
