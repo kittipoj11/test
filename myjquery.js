@@ -2,6 +2,10 @@ $(document).ready(function () {
   // $("H4#hello").html('Hello jQuery');
   // $(document หรือ "body").on("click", "#btnReload",function (event) {location.reload();}); หรือ
   // $(document).on("click", "#btnReload", myFunc); หรือ
+  let btnLoad = document.querySelector(".hello");
+  btnLoad.addEventListener('click', myFunc);
+  // btnLoad.addEventListener("mouseup", changeCSS);
+  
   $("#btnReload").on("click", myFunc);
   function myFunc(event) {
     console.log(event.target);
@@ -12,7 +16,7 @@ $(document).ready(function () {
     console.log(e.target);
     // let btn = event.target;
 
-    $("h4.hello").html("jQuery!!!");
+    $("h4.hello").html("สวัสดี jQuery!!!");
     $("h4#hello").attr("hidden", true);
     // $("h4#hello").hide();
     $("a.hello").css({ "background-color": "yellow" });
@@ -26,22 +30,33 @@ $(document).ready(function () {
     // ใช้แบบ jQuery
     $("button#btnHi").attr("disabled", true);
     $("button#btnHi").html("click completed");
+
   });
 
-  $("div").hover(function () {
-    $(this).css({ 'background-color': 'yellow', 'font-weight': 'bolder' });
-  }, function () {
-    var cssObj = {
-      'background-color': '#ddd',
-      'font-weight': '',
-      'color': 'rgb(0,40,244)',
-      'border': '1px solid red',
-      'border-radius': '50%',
-      'text-align': 'center',
-      'justify-content': 'center',
-    }
-      // < !--$(this).text(''); -->
+  $("div.hello").hover(function () {
+    $(this).css({ "background-color": "yellow", "font-weight": "bolder" });
+  }, changeCSS);
+
+  function changeCSS() {
+        var cssObj = {
+          "background-color": "#ddd",
+          "font-weight": "",
+          color: "rgb(0,40,244)",
+          border: "1px solid red",
+          "border-radius": "50%",
+          "text-align": "center",
+          "justify-content": "center",
+        };
+        // < !--$(this).text(''); -->
         $(this).css(cssObj);
-  });
+  }
 
+  $('#btnCreateUl').on('click', () => {
+    let ul = document.querySelector('#ul');
+    let li = document.createElement('li');
+    li.innerText = 'aaa';
+    ul.appendChild(li);
+  })
+
+  
 });

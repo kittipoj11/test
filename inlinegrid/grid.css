@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    /* width: 500px; */
+    /* height: 800px; */
+    background: black;
+    border: 1px solid yellow;
+    display: inline-grid;
+    padding: 1em;
+}
+.item{
+    /* background: blue; */
+    border: 1px solid white;
+    color: white;
+}
+
+#item1 {
+    background-color: lime;
+    grid-row-start: 3;
+}
+
+#item2 {
+    background-color: yellow;
+}
+
+#item3 {
+    background-color: blue;
+}
+
+#item4 {
+    grid-column-start: 2;
+    background-color: red;
+}
+
+#item5 {
+    background-color: aqua;
+}

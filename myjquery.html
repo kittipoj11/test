@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
         <style>
-        div {
+        div.hello {
             display:inline-block;
             width:100px;
             height:100px;
             color: green;
             border: 1px solid blue;
+            text-align: center;
         }
     </style>
 </head>
@@ -24,10 +25,40 @@
     <h5 class="hello">Hello World</h5>
     <a href="https://www.google.com" target="_blank" class="hello">google</a>
     <button class="hello" id="btnHi">Click</button>
-    <button class="hello" id="btnReload">Refresh</button>
+    <button class="hello" id="btnReload">Reload</button>
+    <button class="hello" id="btnCreateUl">Create UL</button>
     <br>
-    <div>Move the mouse over a paragraph.</div>
-    <div>Like this one or the one above.</div>
+    <div class="hello">Move the mouse over a paragraph.</div>
+    <div class="hello">Like this one or the one above.</div>
+
+    <div style="border: 1px solid red;">
+        <ul id="ul">
+<li>A</li>
+<li>A</li>
+<li>ผัก
+    <ol>
+        <li>คะน้า</li>
+        <li>ผักกาดขาว</li>
+        <li>กระหล่ำปลี</li>
+        <li>ผักบุ้ง</li>
+        <li>มะระ</li>
+    </ol>
+</li>
+<li>ผลไม้
+    <ol>
+        <li>ผลไม้ชนิดที่</li>
+        <li>ผลไม้ชนิดที่</li>
+        <li>ผลไม้ชนิดที่</li>
+        <li>ผลไม้ชนิดที่</li>
+        <li>ผลไม้ชนิดที่</li>
+        <li>ผลไม้ชนิดที่</li>
+        <li>ผลไม้ชนิดที่</li>
+    </ol>
+</li>
+<li>A</li>
+<li>A</li>
+        </ul>
+    </div>
 
     <script src="jquery/jquery.min.js"></script>
     <script src="myjquery.js"></script>
