@@ -12,15 +12,20 @@
     border: 1px solid yellow;
     display: grid;
     grid-template-columns: 200px auto;
-    grid-template-rows: 50px calc(99vh - 150px - 2em) 100px;
+    grid-template-rows: 50px calc(99vh - 100px - 2em) 50px;
     grid-template-areas:
-        "grid-header grid-header"
+        "grid-logo grid-header"
         "grid-sidebar grid-main"
-        "grid-footer grid-footer"
+        "grid-sidebar grid-footer"
     ;
     padding: 1em;
-    text-shadow: 0 0 2px white, 0 0 4px white, 0 0 8px white;
-    text-decoration: underline wavy;
+    text-shadow: 0 0 2px greenyellow, 0 0 4px greenyellow, 0 0 8px greenyellow;
+    /* text-decoration: underline wavy; */
+}
+
+.grid-logo {
+    grid-area: grid-logo;
+    border: 1px solid yellow;
 }
 
 .grid-header {
@@ -31,14 +36,61 @@
 .grid-sidebar {
     grid-area: grid-sidebar;
     border: 1px solid green;
+    overflow-y: auto;
 }
 
 .grid-main {
     grid-area: grid-main;
-    border: 1px solid greenyellow;
+    border: 5px solid greenyellow;
     overflow-y: auto;
 
     display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    text-shadow: 0 0 2px white, 0 0 4px white, 0 0 8px white;
+    /* text-decoration: underline wavy; */
+    text-transform: uppercase;
+}
+
+.grid-main-1{
+    display:flex;
+    position: absolute;
+    top: 0;
+    border: 2px solid white;
+    /* height: calc(100% - 100px); */
+    overflow-y: auto;
+}
+.grid-main-2 {
+    display:flex;
+    position: absolute;
+    top: 0;
+    border: 2px solid peru;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+}
+
+div.relative {
+    display: flex;
+    position: relative;
+    /* width: 400px; */
+    height: 100%;
+    height: 500px;
+    border: 3px solid white;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+div.absolute {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* width: 200px; */
+    height: 100px;
+    border: 1px solid red;
     justify-content: center;
     align-items: center;
 }
@@ -56,13 +108,25 @@
     height: 50px;
 }
 
-.grid-footer-2 {
-    border: 1px solid peru;
-    height: calc(100% - 50px);
+
+/* 
+Responsive Layout ด้วย CSS Grid
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+auto-fit คือการปรับให้ element มีการปรับขนาดให้มัน fit ตาม container ที่มันอยู่ 
+minmax คือการกำหนดขนาดที่ตํ่าที่สุดและมากที่สุดจากโค้ดตัวอย่างมีการกำหนดขนาดที่ตํ่าที่สุดคือ 200px มากสุดคือ 1fr หรือก็คือให้มันคำนวณขนาดให้เราเองเลย
+*/
+
+/* 
+การเขียนโค้ดสำหรับทำ Responsive Medie Queries เป็น CSS เทคนิคอีกอย่างหนึ่งที่ช่วยทำให้หน้าเว็บไซต์มีการ Respnsive โดยวิธีการเขียน Medie Queries สามารถเขียนได้แบบนี้เลย
+@media only screen and (min-width: 1200px) {
+        {
+        สิ่งที่อยากปรับ
+    }
 }
 
-.center {
-    /* padding: 70px 0; */
-    /* border: 3px solid green; */
-    text-align: center;
-}
+โค้ดตัวอย่าง จะมีการเขียน เริ่มต้นด้วย @media only screen and และในวงเล็บให้เราใส่ ขนาดที่เราต้องการ และนอกจากนี้ยังมีคำสั่งอีกหลายตัวที่ช่วยให้เราระบุขนาดของหน้าจอที่เราต้องการนอกจากนี้เรายังสามารถใช้ Medie Queries เช็คสิ่งต่างๆได้เช่น 
+เช็คความกว่างความสูงของ viewport 
+เช็คความกว้างความสูงของ device 
+เช็ค screen orientation 
+เช็ค screen resolution
+*/
