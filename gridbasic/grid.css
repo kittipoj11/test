@@ -7,10 +7,10 @@
 .grid-container {
     /* width: 500px; */
     /* height: 800px; */
+    display: grid;
     background: black;
     color: white;
     border: 1px solid yellow;
-    display: grid;
     grid-template-columns: 200px auto;
     grid-template-rows: 50px calc(99vh - 100px - 2em) 50px;
     grid-template-areas:
@@ -21,6 +21,7 @@
     padding: 1em;
     text-shadow: 0 0 2px greenyellow, 0 0 4px greenyellow, 0 0 8px greenyellow;
     /* text-decoration: underline wavy; */
+    
 }
 
 .grid-logo {
