@@ -42,11 +42,12 @@
 
 .grid-main {
     grid-area: grid-main;
+    display: flex;
+    flex-direction: column;
+    
     border: 5px solid greenyellow;
     overflow-y: auto;
 
-    display: flex;
-    flex-direction: column;
     /* justify-content: center;
     align-items: center; */
     text-shadow: 0 0 2px white, 0 0 4px white, 0 0 8px white;

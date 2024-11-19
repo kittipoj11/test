@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<title>Data Tables</title>
+
+		<!-- นำเข้า  CSS จาก Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+		<!-- นำเข้า  CSS จาก dataTables -->
+		<link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+		<link rel="stylesheet" type="text/css"
+			href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.dataTables.css" />
+
+		<!-- นำเข้า  Javascript จาก  Jquery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<!-- นำเข้า  Javascript  จาก   dataTables -->
+		<script type="text/javascript" charset="utf8"
+			src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+		<script src="https://cdn.datatables.net/buttons/3.2.0/js/dataTables.buttons.js"></script>
+		<script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.dataTables.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+		<script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.html5.min.js"></script>
+		<script src="https://cdn.datatables.net/buttons/3.2.0/js/buttons.print.min.js"></script>
+		
+		<script type="text/javascript">
+			//คำสั่ง Jquery เริ่มทำงาน เมื่อ โหลดหน้า Page เสร็จ
+			$(function () {
+				//กำหนดให้  Plug-in dataTable ทำงาน ใน ตาราง Html ที่มี id เท่ากับ example
+				$("#example").dataTable({
+					fixedHeader: {
+						header: true,
+						footer: true,
+					},
+					paging: false,
+					lengthChange: false,
+					scrollCollapse: true,
+					scrollY: '400px',
+					searching: false,
+					autoWidth: false, //กำหนดความกว้างอัตโนมัติ
+					info: true,
+					emptyTable: "No data available in table....",
+					zeroRecords: "No matching records found...",
+					pageResize: true,
+
+					scrollResize: true,
+					layout: {
+						topStart: {
+							buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+						}
+					},
+					// buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+				})
+					.buttons()
+					.container()
+					.appendTo("#example1_wrapper .col-md-6:eq(0)");
+			});
+		</script>
+
+		<script src="<?=base_url('js/vfs_fonts.js')?>"></script>
+
+		<style>
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 4fr;
+				grid-template-rows: 1fr 5fr;
+				border: 1px solid red;
+				height: 600px;
+				grid-template-areas:
+					"logo1 menu1"
+					"side1 content1";
+				overflow-y: auto;
+			}
+
+			.item {
+				border: 1px solid blue;
+			}
+
+			#logo1 {
+				grid-area: logo1;
+				border: 1px solid green;
+			}
+
+			#menu1 {
+				grid-area: menu1;
+				border: 1px solid green;
+			}
+
+			#side1 {
+				grid-area: side1;
+				border: 1px solid green;
+			}
+
+			#content1 {
+				grid-area: content1;
+				border: 1px solid green;
+				display: flex;
+				align-items: stretch;
+			}
+
+			#example {
+				align-self: stretch;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Data Tables</h1>
+		<div class="container">
+			<div class="item" id="logo1">Item 1</div>
+			<div class="item" id="menu1">Item 2</div>
+			<div class="item" id="side1">Item 3</div>
+			<div class="item" id="content1">
+				<table class="table table-bordered" id="example">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Position</th>
+							<th>Office</th>
+							<th>Age</th>
+							<th>Start date</th>
+							<th>Salary</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Zorita Serrano</td>
+							<td>Software Engineer</td>
+							<td>San Francisco</td>
+							<td>56</td>
+							<td>2012/06/01</td>
+							<td>$115,000</td>
+						</tr>
+						<tr>
+							<td>Jennifer Acosta</td>
+							<td>Junior Javascript Developer</td>
+							<td>Edinburgh</td>
+							<td>43</td>
+							<td>2013/02/01</td>
+							<td>$75,650</td>
+						</tr>
+						<tr>
+							<td>Cara Stevens</td>
+							<td>ซอฟต์แวร์ เอ็นจิเนียร์</td>
+							<td>New York</td>
+							<td>46</td>
+							<td>2011/12/06</td>
+							<td>$145,600</td>
+						</tr>
+						<tr>
+							<td>Hermione Butler</td>
+							<td>Regional Director</td>
+							<td>London</td>
+							<td>47</td>
+							<td>2011/03/21</td>
+							<td>$356,250</td>
+						</tr>
+						<tr>
+							<td>Lael Greer</td>
+							<td>Systems Administrator</td>
+							<td>London</td>
+							<td>21</td>
+							<td>2009/02/27</td>
+							<td>$103,500</td>
+						</tr>
+						<tr>
+							<td>Jonas Alexander</td>
+							<td>Developer</td>
+							<td>San Francisco</td>
+							<td>30</td>
+							<td>2010/07/14</td>
+							<td>$86,500</td>
+						</tr>
+						<tr>
+							<td>Shad Decker</td>
+							<td>Regional Director</td>
+							<td>Edinburgh</td>
+							<td>51</td>
+							<td>2008/11/13</td>
+							<td>$183,000</td>
+						</tr>
+						<tr>
+							<td>Michael Bruce</td>
+							<td>Javascript Developer</td>
+							<td>Singapore</td>
+							<td>29</td>
+							<td>2011/06/27</td>
+							<td>$183,000</td>
+						</tr>
+						<tr>
+							<td>Donna Snider</td>
+							<td>Customer Support</td>
+							<td>New York</td>
+							<td>27</td>
+							<td>2011/01/25</td>
+							<td>$112,000</td>
+						</tr>
+
+						<tr>
+							<td>Jena Gaines</td>
+							<td>Office Manager</td>
+							<td>London</td>
+							<td>30</td>
+							<td>2008/12/19</td>
+							<td>$90,560</td>
+						</tr>
+						<tr>
+							<td>Quinn Flynn</td>
+							<td>Support Lead</td>
+							<td>Edinburgh</td>
+							<td>22</td>
+							<td>2013/03/03</td>
+							<td>$342,000</td>
+						</tr>
+						<tr>
+							<td>Charde Marshall</td>
+							<td>Regional Director</td>
+							<td>San Francisco</td>
+							<td>36</td>
+							<td>2008/10/16</td>
+							<td>$470,600</td>
+						</tr>
+						<tr>
+							<td>Haley Kennedy</td>
+							<td>Senior Marketing Designer</td>
+							<td>London</td>
+							<td>43</td>
+							<td>2012/12/18</td>
+							<td>$313,500</td>
+						</tr>
+						<tr>
+							<td>Tatyana Fitzpatrick</td>
+							<td>Regional Director</td>
+							<td>London</td>
+							<td>19</td>
+							<td>2010/03/17</td>
+							<td>$385,750</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</body>
+
+</html>
